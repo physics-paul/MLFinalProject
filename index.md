@@ -1,4 +1,12 @@
-## Welcome to GitHub Pages
+# Machine Learning Final Project
+### Group 20
+- Carson Fletcher
+- Sidney Genrich
+- Clemens Koolen 
+- Andrew Palmer
+- Ben Wisehaupt
+
+## Introduction
 
 You can use the [editor on GitHub](https://github.com/cfletcher33/cfletcher33.github.io/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
 
