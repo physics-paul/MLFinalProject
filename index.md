@@ -12,12 +12,12 @@ Our project is based on a kaggle competition to predict the next price that a US
 ## Data
 The structure of the data
 
-## Methods
-#### Principle Component Analysis
+## Model Implementation
+### Principle Component Analysis
 
-#### Random Forest
+### Random Forest
 
-#### SVM???
+### SVM???
 
 ### Ect.
 
