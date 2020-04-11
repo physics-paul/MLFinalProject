@@ -13,15 +13,15 @@ Our project is based on a kaggle competition to predict the next price that a US
 The structure of the data
 
 ## Model Implementation
-### Principle Component Analysis
+#### Principle Component Analysis
 
-### Random Forest
+#### Random Forest
 
-### SVM???
+#### SVM???
 
-### Ect.
+#### Ect.
 
-### Hyperparamter Tuning
+#### Hyperparamter Tuning
 
 
 ## Performance Evalaution
