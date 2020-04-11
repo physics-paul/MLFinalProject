@@ -1,5 +1,5 @@
-# Machine Learning Final Project
-### Group 20
+## Meet the Team
+Group 20
 - Carson Fletcher
 - Sidney Genrich
 - Clemens Koolen 
@@ -11,11 +11,11 @@
 ## Data
 
 ## Methods
-### Principle Component Analysis
+#### Principle Component Analysis
 
-### Random Forest
+#### Random Forest
 
-### SVM???
+#### SVM???
 
 ### Ect.
 
