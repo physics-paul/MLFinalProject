@@ -15,13 +15,31 @@ The dataset was provided by the Kaggle competition and consists of microstructur
 The first step of data preprocessing was to clean the data. We first removed irrelevant columns, namely the trade id and reporting delay features. The trade id feature was simply an identifier and had no predictive power. The reporting delay feature was removed because the it was found to be extremely noisy and did not provide any valuable insight. The next step of preprocessing was to remove all rows containing nan, infinite, and missing values. Generally, removing all rows with a corrupted value can be dangerous because it can lead to a severe reduction in the size of your data set. However, after this second step was performed the data consisted of 745,009 instances, so we are confident that this procedure was safe to perfrom and still left us with a significant amount of data to test and train.
 
 ## Model Implementation
+
+In order to choose our models, we have to first make some observations about our data. The most important observation for our model selection is that unlike many other datasets out there that might classify things, or regress seemingly linear data, our data is nonlinear. This severely limits our scope of machine learning models. **Insert about unsupervised, why PCA** As a result, for our supervised learning algorithms, we will be looking at three different levels of Decision Trees. We can compare the results based on accuracy and speed and determine how successful they were.
+
 #### Principle Component Analysis
+
+
+
+### Decision Tree Regressor
+
+
+
+### Random Forest Regressor
+
+As our second Supervised model, we have chosen a Random Forest Regressor model, as sort of an improvement on our Decision Tree Regressor. Given the large amount of variables and data points, and the very specific objective we are trying to achieve, it is important that we get a large amount of accuracy, without risking overfitting, which we are likely to encounter in a decision tree. If we look at how a Decision Tree Regressor is fitted on data, we don't really create a smart algorithm. Our model will see a new data point and simply compare the new point with what it has seen previously, regardless of bias or specific important parameters in the data. Therefore, to avoid all of this, one of the most obvious models to use is a random forest. Using the characteristic bootstrapping that a Random Forest employs, we can get rid of any bias in our data. Data points will be trained individually given a sample of features, and through this process, we will aggregate the results of various decision trees that have all been trained on different kinds of data and features. As a result, we have taken the benefits of our decision tree, and combined it with unbiased data and smarter regression.
+
+For implementation
+
+For hyperparameter tuning, we will look at both parameters that are characteristic to decision trees, and to random forests. For example, one of the parameters specific to the random forest is the number of trees. Naturally, the more trees we have the better our model will perform, yet at the cost of speed. Similarly, we can look at the decision trees in the forest, and recognize that using our regression, we would want to change the maximum number of leaves of a node, or ... **insert parameters**
+
+For the implementation of the parameter tuning, we first recognized that there is a large variability in our data and features. We therefore won't just run a simple GridSearch with arbitrary hyperparameters, as we could either make the model too complicated, or too simple. Therefore, to give us an idea of what we should put in our GridSearch, we will first run a RandomSearch, looking at a wide range of hyperparameters and see how it impacts our results. **Insert ranges**
+
+
 
 #### Extreme Gradient Boosted Random Forest (XGBoost)
 
-#### SVM
-
-#### Hyperparamter Tuning
 
 
 ## Performance Evalaution
