@@ -34,7 +34,6 @@ The plot below highlights the variance explained by each principle component. We
 One large downside of using a PCA is that its only goal is to explain a certain amount of variance. In the process of achieving this goal, the PCA overlooks small differentiations in the data that may provide great predictive power.  We will explore the performance of the models when using the principle components to train and test versus when using the original features to train and test.
 
 
-
 ### Decision Tree Regressor
 
 Decision trees are extremely effective at going through a variety of features and splitting on the feature that impacts price the most. They could take long to train, yet are simple to understand and yield great results if your data is not prone to overfitting. One problem we might encounter however, is that we need pretty deep and complicated trees to properly regress our dataset to the accuracy level that we would like. While we could use Decision Trees to give an extremely rough estimate of whether a bond price is going to be higher or lower than what we have seen, our performance evaluation is focused on quantifying the difference in prices.
