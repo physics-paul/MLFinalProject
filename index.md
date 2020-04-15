@@ -28,19 +28,23 @@ Our unsupervised learning model is a principal component analysis which was used
 
 
 
-#### Decision Tree Regressor
+### Decision Tree Regressor
+
+Now that we have done our unsupervised model, we will use three supervised models with decision trees as a base. The first one is a Decision Tree Regressor. Decision trees are extremely effective at going through a variety of features and splitting on the feature that impacts price the most. They could take long to train, yet are simple to understand and yield great results if your data is not prone to overfitting. One problem we might encounter however, is that we need pretty deep and complicated trees to properly regress our dataset to the accuracy level that we would like. While we could use Decision Trees to give an extremely rough estimate of whether a bond price is going to be higher or lower than what we have seen, our performance evaluation is focused on quantifying the difference in prices.
+
+As mentioned before, our effectiveness of decision trees will really come down to the hyperparameter tuning, as a tree too deep, could open us up to overfitting, and a tree too shallow would not split our data enough. Similarly, having too many leaves could overfit our data, while keeping a large variety of bond prices within a leaf could generalize the bond prices too much. In general, we have settled on the following hyperparameters to tune:
 
 
+### Random Forest Regressor
 
-#### Random Forest Regressor
-
-As our second Supervised model, we have chosen a Random Forest Regressor model, as sort of an improvement on our Decision Tree Regressor. Given the large amount of variables and data points, and the very specific objective we are trying to achieve, it is important that we get a large amount of accuracy, without risking overfitting, which we are likely to encounter in a decision tree. If we look at how a Decision Tree Regressor is fitted on data, we don't really create a smart algorithm. Our model will see a new data point and simply compare the new point with what it has seen previously, regardless of bias or specific important parameters in the data. Therefore, to avoid all of this, one of the most obvious models to use is a random forest. Using the characteristic bootstrapping that a Random Forest employs, we can get rid of any bias in our data. Data points will be trained individually given a sample of features, and through this process, we will aggregate the results of various decision trees that have all been trained on different kinds of data and features. As a result, we have taken the benefits of our decision tree, and combined it with unbiased data and smarter regression.
+As our second Supervised model, we have chosen a Random Forest Regressor model, as an improvement on our Decision Tree Regressor. Given the complexity of our data, and the complicated process of pricing bonds, we need to attain accuracy on our training data without overfitting, the latter which is common in decision trees. Decision Tree Regressors fail at predicting new data points in a 'smart' way as it will just look at previously encountered data points, regardless of bias or specific defining characteristics, and assign a price value to the model. To avoid these problems and still maintain an accurate model with nonlinear data, we will use a random forest. Using the characteristic bootstrapping that a Random Forest employs, we can get rid of bias that might exist in our data. Sample data points will be used to train the trees using a sample of features, after which we will aggregate the results of all of our decision trees that have been trained on different data points and features. The resulting bond price will be more accurate through unbiased data points and features, and aggregated decision tree results. In general, we have taken the benefits of our decision tree, and combined it with unbiased data and smarter prediction.
 
 For implementation
 
-For hyperparameter tuning, we will look at both parameters that are characteristic to decision trees, and to random forests. For example, one of the parameters specific to the random forest is the number of trees. Naturally, the more trees we have the better our model will perform, yet at the cost of speed. Similarly, we can look at the decision trees in the forest, and recognize that using our regression, we would want to change the maximum number of leaves of a node, or ... **insert parameters**
+A random forest relaly has two areas of hyperparameter tuning, the forest, and the trees. We will look at both. For example, one of the parameters specific to the random forest is the number of trees. Naturally, the more trees we have the better our model will perform, yet at the cost of speed. Similarly to hyperparameter tuning in decision trees, we would want to change the maximum number of leaves of a node, or the depth of the tree in order to either improve our accuracy of our speed. The specifics of the hyperparameters we are tuning follows:... **insert parameters**
 
 For the implementation of the parameter tuning, we first recognized that there is a large variability in our data and features. We therefore won't just run a simple GridSearch with arbitrary hyperparameters, as we could either make the model too complicated, or too simple. Therefore, to give us an idea of what we should put in our GridSearch, we will first run a RandomSearch, looking at a wide range of hyperparameters and see how it impacts our results. **Insert ranges**
+
 
 
 
