@@ -78,6 +78,15 @@ In this method our objective function is composed of two parts: (1) a training l
 More specifically, the tree boosting works as follows:
 ![Math](https://raw.githubusercontent.com/cfletcher33/MLFinalProject/master/math_pic_1.png)
 
+Which becomes
+
+![Math](https://raw.githubusercontent.com/cfletcher33/MLFinalProject/master/math_pic_2.png)
+
+Where
+
+![Math](https://raw.githubusercontent.com/cfletcher33/MLFinalProject/master/math_pic_3.png)
+
+
 Practically speaking this is used to optimize one level of the tree at a time using a measurement called Gain.
 Gain is used to split a leaf into two leaves.
 $$Gain = 0.5 * [ \frac{G_L^2}{H_L + \lambda} + \frac{G_R^2}{H_R + \lambda} - \frac{(G_L+G_R)^2}{H_L + H_R+\lambda}]$$
