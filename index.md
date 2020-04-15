@@ -96,7 +96,9 @@ Where
 Practically speaking this is used to optimize one level of the tree at a time using a measurement called Gain.
 Gain is used to split a leaf into two leaves.
 
-$$Gain = 0.5 * [ \frac{G_L^2}{H_L + \lambda} + \frac{G_R^2}{H_R + \lambda} - \frac{(G_L+G_R)^2}{H_L + H_R+\lambda}]$$
+<p align="center">
+  <img width="175" height="50" src="https://raw.githubusercontent.com/cfletcher33/MLFinalProject/master/math_pic_4.png">
+</p>
 
 Where lambda is the regularization on the leaf. Interestingly using this Gain is pretty much the same as post pruning, but while building the tree.
 
