@@ -68,7 +68,26 @@ A random forest has two areas of hyperparameter tuning, the forest, and the tree
 
 
 ### Extreme Gradient Boosted Random Forest (XGBoost)
+Boosting adds another level of complexity onto our previous methods of Decision Tree Regressor and Random Forest Regressor.
+In this method our objective function is composed of two parts: (1) a training loss and (2) a regularization term. 
 
+More specifically, the tree boosting works as follows:
+$$objective function = training loss + regularization = \sum_{i=1}^{n} l(y_i, \Hat{y}_i^{(t)}) + \sum_{i=1}^{t} \omega(f_i)$$
+$$training loss = \sum_{i=1}^{n} l(y_i, \Hat{y}_i^{(t)}) = \sum_{i=1}^{n} g_i * f_t(x_i) + 0.5 * h_i * f_t^2 (x_i)$$
+$$regularization = \sum_{i=1}^{t} \omega(f_i) = \sum_{i=1}^{t} \tau_i + 0.5 \lambda \sum_{j=1}^T w_j^2$$
+
+Which becomes:
+$$obj^* = -0.5 \sum_{j=i}^T \frac{G_j}{H_j + \lambda} + \tau$$
+where
+$$G_j = \sum_{i \in I_j} g_i \text{and } H_j = \sum_{i \in I_j} h_i$$
+
+Practically speaking this is used to optimize one level of the tree at a time using a measurement called Gain.
+Gain is used to split a leaf into two leaves.
+$$Gain = 0.5 * [ \frac{G_L^2}{H_L + \lambda} + \frac{G_R^2}{H_R + \lambda} - \frac{(G_L+G_R)^2}{H_L + H_R+\lambda}]$$
+Where $\lambda$ is the regularization on the leaf. Interestingly using this Gain is pretty much the same as post pruning, but while building the tree.
+
+A gradient-boosted tree does the above, but with building the tree with respect to the residuals rather than the original data/labels.
+XGBoost is an implementation of gradient boosting that emphasizes execution speed.
 
 
 # Performance Evalaution
