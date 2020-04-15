@@ -28,11 +28,11 @@ Our unsupervised learning model is a principal component analysis which was used
 The principle component analysis was 
 
 
-### Decision Tree Regressor
+#### Decision Tree Regressor
 
 
 
-### Random Forest Regressor
+#### Random Forest Regressor
 
 As our second Supervised model, we have chosen a Random Forest Regressor model, as sort of an improvement on our Decision Tree Regressor. Given the large amount of variables and data points, and the very specific objective we are trying to achieve, it is important that we get a large amount of accuracy, without risking overfitting, which we are likely to encounter in a decision tree. If we look at how a Decision Tree Regressor is fitted on data, we don't really create a smart algorithm. Our model will see a new data point and simply compare the new point with what it has seen previously, regardless of bias or specific important parameters in the data. Therefore, to avoid all of this, one of the most obvious models to use is a random forest. Using the characteristic bootstrapping that a Random Forest employs, we can get rid of any bias in our data. Data points will be trained individually given a sample of features, and through this process, we will aggregate the results of various decision trees that have all been trained on different kinds of data and features. As a result, we have taken the benefits of our decision tree, and combined it with unbiased data and smarter regression.
 
