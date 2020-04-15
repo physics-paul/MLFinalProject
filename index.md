@@ -10,16 +10,22 @@ Group 20
 Our project is based on a kaggle competition to predict the next price that a US corporate bond might trade at. The movement of asset prices is a highly complex system, making them a key candidate for machine learning techniques. Given the various new platforms on which corporate bonds are traded, and the need for more frequent, up-to-date information of bond prices, we hope to create an algorithm that is able to accurately, and quickly price bonds.
 
 ## Data
-The dataset was provided by the Kaggle competition and consists of microstructure bond trade data. The raw dataset provides 61 features and 762,678 instances. The data structure is easy to work with as there is no time series dependency, and therefore each instance is not dependent on those around it.
+The dataset was provided by the Kaggle competition and consists of microstructure bond trade data. The raw dataset provides a label coumn decsribing the true trade price, a weight column, 57 features, and 762,678 instances. The weight column is  calculated as the square root of the time since the last trade and then scaled so the mean is 1. This weight column is used for evaluation purposes and will be further discussed below. The data structure is easy to work with as there is no time series dependency, and therefore each instance is not dependent on those around it.
 
 The first step of data preprocessing was to clean the data. We first removed irrelevant columns, namely the trade id and reporting delay features. The trade id feature was simply an identifier and had no predictive power. The reporting delay feature was removed because the it was found to be extremely noisy and did not provide any valuable insight. The next step of preprocessing was to remove all rows containing nan, infinite, and missing values. Generally, removing all rows with a corrupted value can be dangerous because it can lead to a severe reduction in the size of your data set. However, after this second step was performed the data consisted of 745,009 instances, so we are confident that this procedure was safe to perfrom and still left us with a significant amount of data to test and train.
 
+Lastly, the data was split into a testing and training set. Because the data does not have any timeseries dependency we were able to use the sklearn test_train_split function to randomly split the data.  Because our data set was plentiful we chose to use a split size of 75% training and 25% testing, which resulted in a training size of 558,756 instances and a testing size of 186,253 instances. 
+
+Functionality was added to scale the data between zero and one, and normalize the data with a mean of zero and standard deviation of 1. These functions allow us to observe the effectiveness of standardizing the data prior to model implementation and then choose the option that provides the best performance.
+
 ## Model Implementation
 
-In order to choose our models, we have to first make some observations about our data. The most important observation for our model selection is that unlike many other datasets out there that might classify things, or regress seemingly linear data, our data is nonlinear. This severely limits our scope of machine learning models. **Insert about unsupervised, why PCA** As a result, for our supervised learning algorithms, we will be looking at three different levels of Decision Trees. We can compare the results based on accuracy and speed and determine how successful they were.
+In order to choose our models, we have to first make some observations about our data. The most important observation for our model selection is that unlike many other datasets out there that might classify things, or regress seemingly linear data, our data is highly non-linear. This severely limits our scope of machine learning models. As a result, for our supervised learning algorithms, we will be looking at three different levels of decision trees in the form of a simple decision tree, a random forest, and an extreme gradient boosted random forest. We beleive these models will be able to effectively solve our problem because they perform well when using non-linear data. This pivot to new supervised models is the biggest change in our approach from the approach presented in the project proposal.
 
 #### Principle Component Analysis
+Our unsupervised learning model is a principal component analysis which was used to reduce the dimensionality of the data set. Given the complexity of our machine learning models, reducing the number of dimensions is extremely valuable because it reduces the amount of time needed to fit the models.
 
+The principle component analysis was 
 
 
 ### Decision Tree Regressor
