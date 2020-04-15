@@ -1,4 +1,4 @@
-## Meet the Team
+# Meet the Team
 Group 20
 - Carson Fletcher
 - Sidney Genrich
@@ -6,10 +6,10 @@ Group 20
 - Andrew Palmer
 - Ben Wisehaupt
 
-## Motivation
+# Motivation
 Our project is based on a kaggle competition to predict the next price that a US corporate bond might trade at. The movement of asset prices is a highly complex system, making them a key candidate for machine learning techniques. Given the various new platforms on which corporate bonds are traded, and the need for more frequent, up-to-date information of bond prices, we hope to create an algorithm that is able to accurately, and quickly price bonds.
 
-## Data
+# Data
 The dataset was provided by the Kaggle competition and consists of microstructure bond trade data. The raw dataset provides a label coumn describing the true trade price, a weight column, 57 features, and 762,678 instances. The weight column is  calculated as the square root of the time since the last trade and then scaled so the mean is 1. This weight column is used for evaluation purposes and will be further discussed below. The data structure is easy to work with as there is no time series dependency, and therefore each instance is not dependent on those around it.
 
 The first step of data preprocessing was to clean the data. We first removed irrelevant columns, namely the trade id and reporting delay features. The trade id feature was simply an identifier and had no predictive power. The reporting delay feature was removed because the it was found to be extremely noisy and did not provide any valuable insight. The next step of preprocessing was to remove all rows containing nan, infinite, and missing values. Generally, removing all rows with a corrupted value can be dangerous because it can lead to a severe reduction in the size of your data set. However, after this second step was performed the data consisted of 745,009 instances, so we are confident that this procedure was safe to perfrom and still left us with a significant amount of data to test and train.
@@ -35,7 +35,7 @@ One large downside of using a PCA is that its only goal is to explain a certain 
 
 
 
-#### Decision Tree Regressor
+### Decision Tree Regressor
 
 Decision trees are extremely effective at going through a variety of features and splitting on the feature that impacts price the most. They could take long to train, yet are simple to understand and yield great results if your data is not prone to overfitting. One problem we might encounter however, is that we need pretty deep and complicated trees to properly regress our dataset to the accuracy level that we would like. While we could use Decision Trees to give an extremely rough estimate of whether a bond price is going to be higher or lower than what we have seen, our performance evaluation is focused on quantifying the difference in prices.
 
@@ -51,7 +51,7 @@ As mentioned before, our effectiveness of decision trees will really come down t
 
 
 
-#### Random Forest Regressor
+### Random Forest Regressor
 
 For our second supervised model, we have chosen a Random Forest Regressor model, as an improvement on our Decision Tree Regressor. Given the complexity of our data, and the complicated process of pricing bonds, we need to attain accuracy on our training data without overfitting, the latter which is common in decision trees. Decision Tree Regressors fail at predicting new data points in a 'smart' way as it will just look at previously encountered data points, regardless of bias or specific defining characteristics, and assign a price value to the model. To avoid these problems and still maintain an accurate model with nonlinear data, we will use a random forest. Using the characteristic bootstrapping that a Random Forest employs, we can get rid of bias that might exist in our data. Sample data points will be used to train the trees using a sample of features, after which we will aggregate the results of all of our decision trees that have been trained on different data points and features. The resulting bond price will be more accurate through unbiased data points and features, and aggregated decision tree results. In general, we have taken the benefits of our decision tree, and combined it with unbiased data and smarter prediction.
 
@@ -67,13 +67,13 @@ A random forest has two areas of hyperparameter tuning, the forest, and the tree
 | Number of Estimators         |  |
 
 
-#### Extreme Gradient Boosted Random Forest (XGBoost)
+### Extreme Gradient Boosted Random Forest (XGBoost)
 
 
 
-## Performance Evalaution
+# Performance Evalaution
 
-## Conclusions
+# Conclusions
 
 
 
