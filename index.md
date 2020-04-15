@@ -41,9 +41,13 @@ Decision trees are extremely effective at going through a variety of features an
 
 As mentioned before, our effectiveness of decision trees will really come down to the hyperparameter tuning, as a tree too deep, could open us up to overfitting, and a tree too shallow would not split our data enough. Similarly, having too many leaves could overfit our data, while keeping a large variety of bond prices within a leaf could generalize the bond prices too much. In general, we have settled on the following hyperparameters to tune:
 
-| Rainy | 50 | False | Closed |
-| Rainy | 30 | True | Closed |
-| Overcast | 20 | False | Open |
+| Parameter  | Value |
+|---|---|
+| P1 | 50 |
+| P2 | 30 | 
+| P3 | 20 |
+| P4 | 10 |
+
 
 
 
