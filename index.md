@@ -74,7 +74,11 @@ A random forest has two areas of hyperparameter tuning, the forest, and the tree
 # Performance Evalaution
 For the Kaggle competition they evaluated performance by calculating the weighted mean absolute error using the weight column mentioned previously. We apply the same method to evaluate our models, and therefore can compare our performance to the competition leaderboard. 
 
-
+| Model                      | WMAE with PCA| WMAE without PCA|
+|---                         |---           |---              |
+|Decision Tree               | | |
+|Random Forest               | | |
+|Extr. Boosted Random Forest | | |
 
 # Conclusions
 
