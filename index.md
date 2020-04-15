@@ -49,8 +49,7 @@ As mentioned before, our effectiveness of decision trees will really come down t
 | Min Samples per Leaf  | 4 |
 | Min Samples per Split | 10 |
 
-![DT feat import](https://raw.githubusercontent.com/cfletcher33/MLFinalProject/master/DecisionTreeImportances.png)
-
+<a href="url"><img src="https://raw.githubusercontent.com/cfletcher33/MLFinalProject/master/DecisionTreeImportances.png" align="center" height="450" width="450" ></a>
 
 
 ### Random Forest Regressor
@@ -68,8 +67,7 @@ A random forest has two areas of hyperparameter tuning, the forest, and the tree
 | Min Samples per Split        |  |
 | Number of Estimators         |  |
 
-![RF feat import](https://raw.githubusercontent.com/cfletcher33/MLFinalProject/master/RF_Importances.png)
-
+<a href="url"><img src="https://raw.githubusercontent.com/cfletcher33/MLFinalProject/master/RF_Importances.png" align="center" height="450" width="450" ></a>
 
 
 ### Extreme Gradient Boosted Random Forest (XGBoost)
@@ -77,16 +75,16 @@ Boosting adds another level of complexity onto our previous methods of Decision 
 In this method our objective function is composed of two parts: (1) a training loss and (2) a regularization term. 
 
 More specifically, the tree boosting works as follows:
-![Math](https://raw.githubusercontent.com/cfletcher33/MLFinalProject/master/math_pic_1.png)
+
+<a href="url"><img src="https://raw.githubusercontent.com/cfletcher33/MLFinalProject/master/math_pic_1.png" align="center" height="100" width="100" ></a>
 
 Which becomes
 
-![Math](https://raw.githubusercontent.com/cfletcher33/MLFinalProject/master/math_pic_2.png)
+<a href="url"><img src="https://raw.githubusercontent.com/cfletcher33/MLFinalProject/master/math_pic_2.png" align="center" height="100" width="100" ></a>
 
 Where
 
-![Math](https://raw.githubusercontent.com/cfletcher33/MLFinalProject/master/math_pic_3.png)
-
+<a href="url"><img src="https://raw.githubusercontent.com/cfletcher33/MLFinalProject/master/math_pic_3.png" align="center" height="100" width="100" ></a>
 
 Practically speaking this is used to optimize one level of the tree at a time using a measurement called Gain.
 Gain is used to split a leaf into two leaves.
@@ -97,14 +95,14 @@ A gradient-boosted tree does the above, but with building the tree with respect 
 XGBoost is an implementation of gradient boosting that emphasizes execution speed.
 
 ![XGBoost cross val](https://raw.githubusercontent.com/cfletcher33/MLFinalProject/master/CrossValXGBoost.png)
-
+<a href="url"><img src="" align="center" height="450" width="450" ></a>
 ![XGBoost Feature Imp ](https://raw.githubusercontent.com/cfletcher33/MLFinalProject/master/XGBoostFeatureImportances.png)
-
+<a href="url"><img src="" align="center" height="450" width="450" ></a>
 # Performance Evalaution
 For the Kaggle competition they evaluated performance by calculating the weighted mean absolute error using the weight column mentioned previously. We apply the same method to evaluate our models, and therefore can compare our performance to the competition leaderboard. 
 
 ![Error Comparison](https://raw.githubusercontent.com/cfletcher33/MLFinalProject/master/ModelErrorComp.png)
-
+<a href="url"><img src="" align="center" height="450" width="450" ></a>
 
 
 
