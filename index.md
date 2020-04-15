@@ -29,7 +29,7 @@ Our principle component analysis was implemented to explain 95% of the variance 
 
 The plot below highlights the variance explained by each principle component. We can see that a majority of the variance is explained in the first two or three components. This may cause issues when using the principle components to fit and predict as it would put essentially put "all of the eggs" in two or three components. 
 
-![Image of principle components](https://raw.githubusercontent.com/cfletcher33/MLFinalProject/master/PCA.png){:height="36px" width="36px"}
+![Image of principle components](https://raw.githubusercontent.com/cfletcher33/MLFinalProject/master/PCA.png)
 
 One large downside of using a PCA is that its only goal is to explain a certain amount of variance. In the process of achieving this goal, the PCA overlooks small differentiations in the data that may provide great predictive power.  We will explore the performance of the models when using the principle components to train and test versus when using the original features to train and test.
 
@@ -48,6 +48,8 @@ As mentioned before, our effectiveness of decision trees will really come down t
 | Min Samples per Leaf  | 4 |
 | Min Samples per Split | 10 |
 
+![DT feat import](https://raw.githubusercontent.com/cfletcher33/MLFinalProject/master/DecisionTreeImportances.png)
+
 
 
 ### Random Forest Regressor
@@ -64,6 +66,9 @@ A random forest has two areas of hyperparameter tuning, the forest, and the tree
 | Min Samples per Leaf         |  |
 | Min Samples per Split        |  |
 | Number of Estimators         |  |
+
+![RF feat import](https://raw.githubusercontent.com/cfletcher33/MLFinalProject/master/RF_Importances.png)
+
 
 
 ### Extreme Gradient Boosted Random Forest (XGBoost)
@@ -88,15 +93,25 @@ Where $\lambda$ is the regularization on the leaf. Interestingly using this Gain
 A gradient-boosted tree does the above, but with building the tree with respect to the residuals rather than the original data/labels.
 XGBoost is an implementation of gradient boosting that emphasizes execution speed.
 
+![XGBoost cross val](https://raw.githubusercontent.com/cfletcher33/MLFinalProject/master/CrossValXGBoost.png)
+
+![XGBoost Feature Imp ](https://raw.githubusercontent.com/cfletcher33/MLFinalProject/master/XGBoostFeatureImportances.png)
 
 # Performance Evalaution
 For the Kaggle competition they evaluated performance by calculating the weighted mean absolute error using the weight column mentioned previously. We apply the same method to evaluate our models, and therefore can compare our performance to the competition leaderboard. 
+
+![Error Comparison](https://raw.githubusercontent.com/cfletcher33/MLFinalProject/master/ModelErrorComp.png)
+
+
+
 
 | Model                      | WMAE with PCA| WMAE without PCA|
 |---                         |---           |---              |
 |Decision Tree               | | |
 |Random Forest               | | |
 |Extr. Boosted Random Forest | | |
+
+
 
 # Conclusions
 
