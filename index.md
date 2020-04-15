@@ -27,7 +27,7 @@ Our unsupervised learning model is a principal component analysis which was used
 
 Our principle component analysis was implemented to explain 95% of the variance of the data set. With this parameter the model requires 24 principle components to meet the threshold of required variance. We implemented the PCA using both scaled and normalized data to see how each would affect the final prediction performance . We found that the PCA using normalized data resulted in better performance when the given principle components are used to fit and predict the data.
 
-The plot below highlights the variance explained by each principle component. We can see that a majority of the variance is explained in the first two or three components. This may cause issues when using the principle components to fit and predict as it would put essentially put all of the eggs in two or components. 
+The plot below highlights the variance explained by each principle component. We can see that a majority of the variance is explained in the first two or three components. This may cause issues when using the principle components to fit and predict as it would put essentially put "all of the eggs" in two or three components. 
 
 ![Image of principle components](https://raw.githubusercontent.com/cfletcher33/MLFinalProject/master/PCA.png)
 
