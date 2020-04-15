@@ -25,6 +25,13 @@ In order to choose our models, we have to first make some observations about our
 #### Principle Component Analysis
 Our unsupervised learning model is a principal component analysis which was used to reduce the dimensionality of the data set. Given the complexity of our machine learning models, reducing the number of dimensions is extremely valuable because it reduces the amount of time needed to fit the models.
 
+Our principle component analysis was implemented to explain 95% of the variance of the data set. With this parameter the model requires 20 principle components to meet the threshold of required variance. We implemented the PCA using both scaled and normalized data to see how each would affect the final prediction performance . We found that the PCA using normalized data resulted in better performance when the given principle components are used to fit and predict the data.
+
+The plot below highlights the variance explained by 
+
+
+
+One large downside of using a PCA is that its only goal is to explain a certain amount of variance. In the process of achieving this goal, the PCA overlooks small differentiations in the data that may provide great predictive power.  We will explore the performance of the models when using the principle components to train and test versus when using the original features to train and test.
 
 
 
