@@ -6,7 +6,7 @@ Group 20
 - Andrew Palmer
 - Ben Wisehaupt
 
-## Introduction
+## Motivation
 Our project is based on a kaggle competition to predict the next price that a US corporate bond might trade at. The movement of asset prices is a highly complex system, making them a key candidate for machine learning techniques. Given the various new platforms on which corporate bonds are traded, and the need for more frequent, up-to-date information of bond prices, we hope to create an algorithm that is able to accurately, and quickly price bonds.
 
 ## Data
