@@ -97,7 +97,7 @@ Practically speaking this is used to optimize one level of the tree at a time us
 Gain is used to split a leaf into two leaves.
 
 <p align="center">
-  <img width="250" height="50" src="https://raw.githubusercontent.com/cfletcher33/MLFinalProject/master/math_pic_4.png">
+  <img width="275" height="50" src="https://raw.githubusercontent.com/cfletcher33/MLFinalProject/master/math_pic_4.png">
 </p>
 
 Where lambda is the regularization on the leaf. Interestingly using this Gain is pretty much the same as post pruning, but while building the tree.
