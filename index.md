@@ -39,16 +39,16 @@ One large downside of using a PCA is that its only goal is to explain a certain 
 
 Decision trees are extremely effective at going through a variety of features and splitting on the feature that impacts price the most. They could take long to train, yet are simple to understand and yield great results if your data is not prone to overfitting. One problem we might encounter however, is that we need pretty deep and complicated trees to properly regress our dataset to the accuracy level that we would like. While we could use Decision Trees to give an extremely rough estimate of whether a bond price is going to be higher or lower than what we have seen, our performance evaluation is focused on quantifying the difference in prices.
 
-As mentioned before, our effectiveness of decision trees will really come down to the hyperparameter tuning, as a tree too deep, could open us up to overfitting, and a tree too shallow would not split our data enough. Similarly, having too many leaves could overfit our data, while keeping a large variety of bond prices within a leaf could generalize the bond prices too much. In general, we have settled on the following hyperparameters to tune:
+As mentioned before, our effectiveness of decision trees will really come down to the hyperparameter tuning, as a tree too deep, could open us up to overfitting, and a tree too shallow would not split our data enough. Similarly, having too many leaves could overfit our data, while keeping a large variety of bond prices within a leaf could generalize the bond prices too much. We performed a cross validated grid search to optimize the hyperparameters in the table below. The table shows the given hyperparameter and its optimal value.
 
 | Parameter  | Value |
 |---|---|
-| P1 | 50 |
-| P2 | 30 | 
-| P3 | 20 |
-| P4 | 10 |
-
-
+| Criterion |  |
+| Splitter  |  | 
+| Max Depth |  |
+| Max Features |  |
+| Min Samples per Leaf| |
+| Min Samples per Split | |
 
 
 
