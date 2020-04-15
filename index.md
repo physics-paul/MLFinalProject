@@ -80,11 +80,11 @@ More specifically, the tree boosting works as follows:
 
 Which becomes
 
-<a href="url"><img src="https://raw.githubusercontent.com/cfletcher33/MLFinalProject/master/math_pic_2.png" align="center" height="75" width="175" ></a>
+<a href="url"><img src="https://raw.githubusercontent.com/cfletcher33/MLFinalProject/master/math_pic_2.png" align="center" height="50" width="150" ></a>
 
 Where
 
-<a href="url"><img src="https://raw.githubusercontent.com/cfletcher33/MLFinalProject/master/math_pic_3.png" align="center" height="50" width="150" ></a>
+<a href="url"><img src="https://raw.githubusercontent.com/cfletcher33/MLFinalProject/master/math_pic_3.png" align="center" height="50" width="125" ></a>
 
 Practically speaking this is used to optimize one level of the tree at a time using a measurement called Gain.
 Gain is used to split a leaf into two leaves.
