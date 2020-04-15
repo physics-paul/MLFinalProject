@@ -25,7 +25,7 @@ In order to choose our models, we have to first make some observations about our
 #### Principle Component Analysis
 Our unsupervised learning model is a principal component analysis which was used to reduce the dimensionality of the data set. Given the complexity of our machine learning models, reducing the number of dimensions is extremely valuable because it reduces the amount of time needed to fit the models.
 
-The principle component analysis was 
+
 
 
 #### Decision Tree Regressor
