@@ -78,7 +78,7 @@ In this method our objective function is composed of two parts: (1) a training l
 More specifically, the tree boosting works as follows:
 
 <p align="center">
-  <img width="450" height="150" src="https://raw.githubusercontent.com/cfletcher33/MLFinalProject/master/math_1.png">
+  <img width="450" height="150" src="https://raw.githubusercontent.com/cfletcher33/MLFinalProject/master/math_pic_1.png">
 </p>
 
 Which becomes
