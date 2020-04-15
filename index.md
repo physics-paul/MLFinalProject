@@ -18,11 +18,11 @@ Lastly, the data was split into a testing and training set. Because the data doe
 
 Functionality was added to scale the data between zero and one, and normalize the data with a mean of zero and standard deviation of 1. These functions allow us to observe the effectiveness of standardizing the data prior to model implementation and then choose the option that provides the best performance.
 
-## Model Implementation
+# Model Implementation
 
 In order to choose our models, we have to first make some observations about our data. The most important observation for our model selection is that unlike many other datasets out there that are composed of seemingly linear data, our data is highly non-linear. This severely limits our scope of machine learning models. As a result, for our supervised learning algorithms, we will be looking at three different levels of decision trees in the form of a simple decision tree, a random forest, and an extreme gradient boosted random forest. We beleive these models will be able to effectively solve our problem because they perform well when using non-linear data. This pivot to new supervised models is the biggest change in our approach from the approach presented in the project proposal.
 
-#### Principle Component Analysis
+### Principle Component Analysis
 Our unsupervised learning model is a principal component analysis which was used to reduce the dimensionality of the data set. Given the complexity of our machine learning models, reducing the number of dimensions is extremely valuable because it reduces the amount of time needed to fit the models.
 
 Our principle component analysis was implemented to explain 95% of the variance of the data set. With this parameter the model requires 24 principle components to meet the threshold of required variance. We implemented the PCA using both scaled and normalized data to see how each would affect the final prediction performance . We found that the PCA using normalized data resulted in better performance when the given principle components are used to fit and predict the data.
