@@ -76,14 +76,7 @@ Boosting adds another level of complexity onto our previous methods of Decision 
 In this method our objective function is composed of two parts: (1) a training loss and (2) a regularization term. 
 
 More specifically, the tree boosting works as follows:
-$$objective function = training loss + regularization = \sum_{i=1}^{n} l(y_i, \Hat{y}_i^{(t)}) + \sum_{i=1}^{t} \omega(f_i)$$
-$$training loss = \sum_{i=1}^{n} l(y_i, \Hat{y}_i^{(t)}) = \sum_{i=1}^{n} g_i * f_t(x_i) + 0.5 * h_i * f_t^2 (x_i)$$
-$$regularization = \sum_{i=1}^{t} \omega(f_i) = \sum_{i=1}^{t} \tau_i + 0.5 \lambda \sum_{j=1}^T w_j^2$$
-
-Which becomes:
-$$obj^* = -0.5 \sum_{j=i}^T \frac{G_j}{H_j + \lambda} + \tau$$
-where
-$$G_j = \sum_{i \in I_j} g_i \text{and } H_j = \sum_{i \in I_j} h_i$$
+![Math]()
 
 Practically speaking this is used to optimize one level of the tree at a time using a measurement called Gain.
 Gain is used to split a leaf into two leaves.
