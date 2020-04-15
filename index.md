@@ -43,26 +43,32 @@ As mentioned before, our effectiveness of decision trees will really come down t
 
 | Parameter  | Value |
 |---|---|
-| Criterion |  |
-| Splitter  |  | 
-| Max Depth |  |
-| Max Features |  |
-| Min Samples per Leaf| |
-| Min Samples per Split | |
+| Splitter              | Random | 
+| Max Depth             | 90 |
+| Max Features          | None |
+| Min Samples per Leaf  | 4 |
+| Min Samples per Split | 10 |
 
 
 
 #### Random Forest Regressor
 
-As our second Supervised model, we have chosen a Random Forest Regressor model, as an improvement on our Decision Tree Regressor. Given the complexity of our data, and the complicated process of pricing bonds, we need to attain accuracy on our training data without overfitting, the latter which is common in decision trees. Decision Tree Regressors fail at predicting new data points in a 'smart' way as it will just look at previously encountered data points, regardless of bias or specific defining characteristics, and assign a price value to the model. To avoid these problems and still maintain an accurate model with nonlinear data, we will use a random forest. Using the characteristic bootstrapping that a Random Forest employs, we can get rid of bias that might exist in our data. Sample data points will be used to train the trees using a sample of features, after which we will aggregate the results of all of our decision trees that have been trained on different data points and features. The resulting bond price will be more accurate through unbiased data points and features, and aggregated decision tree results. In general, we have taken the benefits of our decision tree, and combined it with unbiased data and smarter prediction.
+For our second supervised model, we have chosen a Random Forest Regressor model, as an improvement on our Decision Tree Regressor. Given the complexity of our data, and the complicated process of pricing bonds, we need to attain accuracy on our training data without overfitting, the latter which is common in decision trees. Decision Tree Regressors fail at predicting new data points in a 'smart' way as it will just look at previously encountered data points, regardless of bias or specific defining characteristics, and assign a price value to the model. To avoid these problems and still maintain an accurate model with nonlinear data, we will use a random forest. Using the characteristic bootstrapping that a Random Forest employs, we can get rid of bias that might exist in our data. Sample data points will be used to train the trees using a sample of features, after which we will aggregate the results of all of our decision trees that have been trained on different data points and features. The resulting bond price will be more accurate through unbiased data points and features, and aggregated decision tree results. In general, we have taken the benefits of our decision tree, and combined it with unbiased data and smarter prediction.
 
 For implementation
 
-A random forest relaly has two areas of hyperparameter tuning, the forest, and the trees. We will look at both. For example, one of the parameters specific to the random forest is the number of trees. Naturally, the more trees we have the better our model will perform, yet at the cost of speed. Similarly to hyperparameter tuning in decision trees, we would want to change the maximum number of leaves of a node, or the depth of the tree in order to either improve our accuracy of our speed. The specifics of the hyperparameters we are tuning follows:... **insert parameters**
+A random forest has two areas of hyperparameter tuning, the forest, and the trees. We will look at both. For example, one of the parameters specific to the random forest is the number of trees. Naturally, the more trees we have the better our model will perform, yet at the cost of speed. Similarly to hyperparameter tuning in decision trees, we would want to change the maximum number of leaves of a node, or the depth of the tree in order to either improve our accuracy of our speed. The specifics of the hyperparameters we are tuning follows:... **insert parameters**
 
 For the implementation of the parameter tuning, we first recognized that there is a large variability in our data and features. We therefore won't just run a simple GridSearch with arbitrary hyperparameters, as we could either make the model too complicated, or too simple. Therefore, to give us an idea of what we should put in our GridSearch, we will first run a RandomSearch, looking at a wide range of hyperparameters and see how it impacts our results. **Insert ranges**
 
-
+| Parameter  | Value |
+|---|---| 
+| Max Depth                    |  |
+| Max Features                 |  |
+| Max Leaf Nodes               |  |
+| Min Samples per Leaf         |  |
+| Min Samples per Split        |  |
+| Number of Estimators         |  |
 
 
 #### Extreme Gradient Boosted Random Forest (XGBoost)
