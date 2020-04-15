@@ -50,7 +50,10 @@ As mentioned before, our effectiveness of decision trees will really come down t
 | Min Samples per Leaf  | 4 | |
 | Min Samples per Split | 10 | |
 
-<a href="url"><img src="https://raw.githubusercontent.com/cfletcher33/MLFinalProject/master/DecisionTreeImportances.png" align="center" height="450" width="450" ></a>
+| Without PCA| With PCA|
+|---|---|
+|<a href="url"><img src="https://raw.githubusercontent.com/cfletcher33/MLFinalProject/master/DecisionTreeImportances.png" align="center" height="450" width="450" ></a> | |
+
 
 
 ### Random Forest Regressor
