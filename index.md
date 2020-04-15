@@ -29,7 +29,7 @@ Our principle component analysis was implemented to explain 95% of the variance 
 
 The plot below highlights the variance explained by 
 
-
+![Image of principle components](https://raw.githubusercontent.com/cfletcher33/MLFinalProject/master/PCA.png)
 
 One large downside of using a PCA is that its only goal is to explain a certain amount of variance. In the process of achieving this goal, the PCA overlooks small differentiations in the data that may provide great predictive power.  We will explore the performance of the models when using the principle components to train and test versus when using the original features to train and test.
 
