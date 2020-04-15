@@ -55,11 +55,7 @@ As mentioned before, our effectiveness of decision trees will really come down t
 
 For our second supervised model, we have chosen a Random Forest Regressor model, as an improvement on our Decision Tree Regressor. Given the complexity of our data, and the complicated process of pricing bonds, we need to attain accuracy on our training data without overfitting, the latter which is common in decision trees. Decision Tree Regressors fail at predicting new data points in a 'smart' way as it will just look at previously encountered data points, regardless of bias or specific defining characteristics, and assign a price value to the model. To avoid these problems and still maintain an accurate model with nonlinear data, we will use a random forest. Using the characteristic bootstrapping that a Random Forest employs, we can get rid of bias that might exist in our data. Sample data points will be used to train the trees using a sample of features, after which we will aggregate the results of all of our decision trees that have been trained on different data points and features. The resulting bond price will be more accurate through unbiased data points and features, and aggregated decision tree results. In general, we have taken the benefits of our decision tree, and combined it with unbiased data and smarter prediction.
 
-For implementation
-
-A random forest has two areas of hyperparameter tuning, the forest, and the trees. We will look at both. For example, one of the parameters specific to the random forest is the number of trees. Naturally, the more trees we have the better our model will perform, yet at the cost of speed. Similarly to hyperparameter tuning in decision trees, we would want to change the maximum number of leaves of a node, or the depth of the tree in order to either improve our accuracy of our speed. The specifics of the hyperparameters we are tuning follows:... **insert parameters**
-
-For the implementation of the parameter tuning, we first recognized that there is a large variability in our data and features. We therefore won't just run a simple GridSearch with arbitrary hyperparameters, as we could either make the model too complicated, or too simple. Therefore, to give us an idea of what we should put in our GridSearch, we will first run a RandomSearch, looking at a wide range of hyperparameters and see how it impacts our results. **Insert ranges**
+A random forest has two areas of hyperparameter tuning, the forest, and the trees. We will look at both. For example, one of the parameters specific to the random forest is the number of trees, or the max number of features in a bootstrap sample. Oftentimes, the more trees we have the better our model will perform, yet at the cost of speed. Similarly to hyperparameter tuning in decision trees, our previous model, we would want to change hyperparameters in our decision tree, like the maximum number of leaves of a node, or the depth of the tree in order to either improve our accuracy or speed. To implement the parameter tuning, we realized there is a large variability in our data and features. We therefore won't just run a simple GridSearch with arbitrary hyperparameters as we did in our Decision Tree, as we could either make the model too convoluted, or too simple. Therefore, to give us an idea of what we should put in our cross-validated GridSearch, we will first run a cross-validated RandomSearch, looking at a wide range of hyperparameters and see how it impacts our results. After we have the results of our RandomSearch, we can then run a cross-validated Gridsearch over hyperparameter values closer to our optimal values found in the RandomSearch. Through this, we will get hyperparameters that give us an accurate random forest for our dataset. The table below gives us the hyperparameters and their optimal values.
 
 | Parameter  | Value |
 |---|---| 
@@ -83,38 +79,3 @@ For the implementation of the parameter tuning, we first recognized that there i
 
 
 
-You can use the [editor on GitHub](https://github.com/cfletcher33/cfletcher33.github.io/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/cfletcher33/cfletcher33.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
