@@ -42,13 +42,13 @@ Decision trees are extremely effective at going through a variety of features an
 
 As mentioned before, our effectiveness of decision trees will really come down to the hyperparameter tuning, as a tree too deep, could open us up to overfitting, and a tree too shallow would not split our data enough. Similarly, having too many leaves could overfit our data, while keeping a large variety of bond prices within a leaf could generalize the bond prices too much. We performed a cross validated grid search to optimize the hyperparameters in the table below. The table shows the given hyperparameter and its optimal value.
 
-| Parameter  | Value |
+| Parameter  | Without PCA | With PCA|
 |---|---|
-| Splitter              | Random | 
-| Max Depth             | 90 |
-| Max Features          | None |
-| Min Samples per Leaf  | 4 |
-| Min Samples per Split | 10 |
+| Splitter              | best | |
+| Max Depth             | 40 | |
+| Max Features          | auto | |
+| Min Samples per Leaf  | 4 | |
+| Min Samples per Split | 10 | |
 
 <a href="url"><img src="https://raw.githubusercontent.com/cfletcher33/MLFinalProject/master/DecisionTreeImportances.png" align="center" height="450" width="450" ></a>
 
@@ -59,14 +59,14 @@ For our second supervised model, we have chosen a Random Forest Regressor model,
 
 A random forest has two areas of hyperparameter tuning, the forest, and the trees. We will look at both. For example, one of the parameters specific to the random forest is the number of trees, or the max number of features in a bootstrap sample. Oftentimes, the more trees we have the better our model will perform, yet at the cost of speed. Similarly to hyperparameter tuning in decision trees, our previous model, we would want to change hyperparameters in our decision tree, like the maximum number of leaves of a node, or the depth of the tree in order to either improve our accuracy or speed. To implement the parameter tuning, we realized there is a large variability in our data and features. We therefore won't just run a simple GridSearch with arbitrary hyperparameters as we did in our Decision Tree, as we could either make the model too convoluted, or too simple. Therefore, to give us an idea of what we should put in our cross-validated GridSearch, we will first run a cross-validated RandomSearch, looking at a wide range of hyperparameters and see how it impacts our results. After we have the results of our RandomSearch, we can then run a cross-validated Gridsearch over hyperparameter values closer to our optimal values found in the RandomSearch. Through this, we will get hyperparameters that give us an accurate random forest for our dataset. The table below gives us the hyperparameters and their optimal values.
 
-| Parameter  | Value |
+| Parameter  | Without PCA | With PCA|
 |---|---| 
-| Max Depth                    |  |
-| Max Features                 |  |
-| Max Leaf Nodes               |  |
-| Min Samples per Leaf         |  |
-| Min Samples per Split        |  |
-| Number of Estimators         |  |
+| Max Depth                    | 45 | |
+| Max Features                 | auto | |
+| Max Leaf Nodes               | none | |
+| Min Samples per Leaf         | 6 | |
+| Min Samples per Split        | 10 | |
+| Number of Estimators         | 10 | |
 
 <a href="url"><img src="https://raw.githubusercontent.com/cfletcher33/MLFinalProject/master/RF_Importances.png" align="center" height="450" width="450" ></a>
 
