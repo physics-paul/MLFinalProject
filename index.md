@@ -76,7 +76,7 @@ In this method our objective function is composed of two parts: (1) a training l
 
 More specifically, the tree boosting works as follows:
 
-<a href="url"><img src="https://raw.githubusercontent.com/cfletcher33/MLFinalProject/master/math_pic_1.png" align="center" height="150" width="300" ></a>
+<a href="url"><img src="https://raw.githubusercontent.com/cfletcher33/MLFinalProject/master/math_pic_1.png" align="center" height="150" width="450" ></a>
 
 Which becomes
 
@@ -94,15 +94,14 @@ Where $\lambda$ is the regularization on the leaf. Interestingly using this Gain
 A gradient-boosted tree does the above, but with building the tree with respect to the residuals rather than the original data/labels.
 XGBoost is an implementation of gradient boosting that emphasizes execution speed.
 
-![XGBoost cross val](https://raw.githubusercontent.com/cfletcher33/MLFinalProject/master/CrossValXGBoost.png)
-<a href="url"><img src="" align="center" height="450" width="450" ></a>
-![XGBoost Feature Imp ](https://raw.githubusercontent.com/cfletcher33/MLFinalProject/master/XGBoostFeatureImportances.png)
-<a href="url"><img src="" align="center" height="450" width="450" ></a>
+<a href="url"><img src="https://raw.githubusercontent.com/cfletcher33/MLFinalProject/master/CrossValXGBoost.png" align="center" height="450" width="450" ></a>
+
+<a href="url"><img src="https://raw.githubusercontent.com/cfletcher33/MLFinalProject/master/XGBoostFeatureImportances.png" align="center" height="450" width="450" ></a>
+
 # Performance Evalaution
 For the Kaggle competition they evaluated performance by calculating the weighted mean absolute error using the weight column mentioned previously. We apply the same method to evaluate our models, and therefore can compare our performance to the competition leaderboard. 
 
-![Error Comparison](https://raw.githubusercontent.com/cfletcher33/MLFinalProject/master/ModelErrorComp.png)
-<a href="url"><img src="" align="center" height="450" width="450" ></a>
+<a href="url"><img src="https://raw.githubusercontent.com/cfletcher33/MLFinalProject/master/ModelErrorComp.png" align="center" height="450" width="450" ></a>
 
 
 
