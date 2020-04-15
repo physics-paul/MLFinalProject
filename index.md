@@ -76,7 +76,7 @@ Boosting adds another level of complexity onto our previous methods of Decision 
 In this method our objective function is composed of two parts: (1) a training loss and (2) a regularization term. 
 
 More specifically, the tree boosting works as follows:
-![Math]()
+![Math](https://raw.githubusercontent.com/cfletcher33/MLFinalProject/master/math_pic.png)
 
 Practically speaking this is used to optimize one level of the tree at a time using a measurement called Gain.
 Gain is used to split a leaf into two leaves.
