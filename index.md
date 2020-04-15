@@ -80,16 +80,18 @@ More specifically, the tree boosting works as follows:
 
 Which becomes
 
-<a href="url"><img src="https://raw.githubusercontent.com/cfletcher33/MLFinalProject/master/math_pic_2.png" align="center" height="100" width="100" ></a>
+<a href="url"><img src="https://raw.githubusercontent.com/cfletcher33/MLFinalProject/master/math_pic_2.png" align="center" height="100" width="250" ></a>
 
 Where
 
-<a href="url"><img src="https://raw.githubusercontent.com/cfletcher33/MLFinalProject/master/math_pic_3.png" align="center" height="100" width="100" ></a>
+<a href="url"><img src="https://raw.githubusercontent.com/cfletcher33/MLFinalProject/master/math_pic_3.png" align="center" height="100" width="250" ></a>
 
 Practically speaking this is used to optimize one level of the tree at a time using a measurement called Gain.
 Gain is used to split a leaf into two leaves.
+
 $$Gain = 0.5 * [ \frac{G_L^2}{H_L + \lambda} + \frac{G_R^2}{H_R + \lambda} - \frac{(G_L+G_R)^2}{H_L + H_R+\lambda}]$$
-Where $\lambda$ is the regularization on the leaf. Interestingly using this Gain is pretty much the same as post pruning, but while building the tree.
+
+Where lambda is the regularization on the leaf. Interestingly using this Gain is pretty much the same as post pruning, but while building the tree.
 
 A gradient-boosted tree does the above, but with building the tree with respect to the residuals rather than the original data/labels.
 XGBoost is an implementation of gradient boosting that emphasizes execution speed.
