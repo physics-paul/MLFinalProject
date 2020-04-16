@@ -7,7 +7,7 @@ Group 20
 - Ben Wisehaupt
 
 # Motivation
-Our project is based on a kaggle competition to predict the next price that a US corporate bond might trade at. The movement of asset prices is a highly complex system, making them a key candidate for machine learning techniques. Given the various new platforms on which corporate bonds are traded, and the need for more frequent, up-to-date information of bond prices, we hope to create an algorithm that is able to accurately, and quickly price bonds.
+Our project is based on a kaggle competition ([link](https://www.kaggle.com/c/benchmark-bond-trade-price-challenge)) to predict the next price that a US corporate bond might trade at. The movement of asset prices is a highly complex system, making them a key candidate for machine learning techniques. Given the various new platforms on which corporate bonds are traded, and the need for more frequent, up-to-date information of bond prices, we hope to create an algorithm that is able to accurately, and quickly price bonds.
 
 # Data
 The dataset was provided by the Kaggle competition and consists of microstructure bond trade data. The raw dataset provides a label coumn describing the true trade price, a weight column, 57 features, and 762,678 instances. The weight column is  calculated as the square root of the time since the last trade and then scaled so the mean is 1. This weight column is used for evaluation purposes and will be further discussed below. The data structure is easy to work with as there is no time series dependency, and therefore each instance is not dependent on those around it.
