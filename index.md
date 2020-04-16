@@ -52,7 +52,7 @@ As mentioned before, our effectiveness of decision trees will really come down t
 
 | Without PCA| With PCA|
 |---|---|
-|<a href="url"><img src="https://raw.githubusercontent.com/cfletcher33/MLFinalProject/master/DecisionTreeImportances.png" align="center" height="350" width="350" ></a> | <a href="url"><img src="https://raw.githubusercontent.com/cfletcher33/MLFinalProject/master/DecisionTreeImportances.png" align="center" height="350" width="350" ></a> |
+|<a href="url"><img src="https://raw.githubusercontent.com/cfletcher33/MLFinalProject/master/DecisionTreeImportances.png" align="center" height="375" width="375" ></a> | <a href="url"><img src="https://raw.githubusercontent.com/cfletcher33/MLFinalProject/master/DecisionTreeImportances.png" align="center" height="375" width="375" ></a> |
 
 
 
