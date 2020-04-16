@@ -44,11 +44,11 @@ As mentioned before, our effectiveness of decision trees will really come down t
 
 | Parameter  | Without PCA | With PCA|
 |---|---|---|
-| Splitter              | best | |
-| Max Depth             | 40 | |
-| Max Features          | auto | |
-| Min Samples per Leaf  | 4 | |
-| Min Samples per Split | 10 | |
+| Splitter              | best | random|
+| Max Depth             | 40 | 45|
+| Max Features          | auto | auto|
+| Min Samples per Leaf  | 4 | 4|
+| Min Samples per Split | 10 | 10|
 
 | Without PCA| With PCA|
 |---|---|
@@ -64,16 +64,16 @@ A random forest has two areas of hyperparameter tuning, the forest, and the tree
 
 | Parameter  | Without PCA | With PCA|
 |---|---| ---|
-| Max Depth                    | 45 | |
-| Max Features                 | auto | |
-| Max Leaf Nodes               | none | |
-| Min Samples per Leaf         | 6 | |
-| Min Samples per Split        | 10 | |
-| Number of Estimators         | 10 | |
+| Max Depth                    | 45 | 45|
+| Max Features                 | auto | auto|
+| Max Leaf per Node               | none | none|
+| Min Samples per Leaf         | 6 | 6|
+| Min Samples per Split        | 10 | 10|
+| Number of Estimators         | 10 | 10|
 
 | Without PCA| With PCA|
 |---|---|
-|<a href="url"><img src="https://raw.githubusercontent.com/cfletcher33/MLFinalProject/master/RF_Importances.png" align="center" height="315" width="315" ></a>||
+|<a href="url"><img src="https://raw.githubusercontent.com/cfletcher33/MLFinalProject/master/RF_Importances.png" align="center" height="315" width="315" ></a>|<a href="url"><img src="https://raw.githubusercontent.com/cfletcher33/MLFinalProject/master/PCARFImportance.png" align="center" height="315" width="315" ></a>|
 
 
 ### Extreme Gradient Boosted Random Forest (XGBoost)
@@ -108,7 +108,9 @@ Gain is used to split a leaf into two leaves.
 Where lambda is the regularization on the leaf. Interestingly using this Gain is pretty much the same as post pruning, but while building the tree.
 
 A gradient-boosted tree does the above, but with building the tree with respect to the residuals rather than the original data/labels.
-XGBoost is an implementation of gradient boosting that emphasizes execution speed.
+XGBoost is an implementation of gradient boosting that emphasizes execution speed. 
+
+The main hyperparamter for this algorithim is the number of features. This parameter was optimized through cross validation, which is represented by the figures below. We can see as the number of estimators approaches 70, the marginal increase in accuracy begins to faltten. The optimal number of estimators for both secnarios, without PCA and with PCA, was determined to be 70.
 
 | Without PCA| With PCA|
 |---|---|
@@ -119,7 +121,9 @@ XGBoost is an implementation of gradient boosting that emphasizes execution spee
 |<a href="url"><img src="https://raw.githubusercontent.com/cfletcher33/MLFinalProject/master/XGBoostFeatureImportances.png" align="center" height="315" width="315" ></a>| <a href="url"><img src="https://raw.githubusercontent.com/cfletcher33/MLFinalProject/master/PCAXGBFeatureImport.png" align="center" height="315" width="315" ></a>|
 
 # Performance Evalaution
-For the Kaggle competition they evaluated performance by calculating the weighted mean absolute error using the weight column mentioned previously. We apply the same method to evaluate our models, and therefore can compare our performance to the competition leaderboard. 
+For the Kaggle competition they evaluated performance by calculating the weighted mean absolute error using the weight column mentioned previously. We apply the same method to evaluate our models, and therefore can compare our performance to the competition leaderboard. We can see that the models running without PCA significantly outperformed the models that were running with PCA. This is due to the fact that PCA destroys the slight nuances in the data that have the potential for great predictive power. 
+
+Based on our performance below, the Extreme Gradient Boosted Random Forest wihtout PCA was clearly the best model. If we were to enter this model into the Kaggle competition we would have placed in 6th place. 
 
 | Without PCA| With PCA|
 |---|---|
@@ -131,7 +135,7 @@ For the Kaggle competition they evaluated performance by calculating the weighte
 |---                         |---           |---              |
 |Decision Tree               | 0.9512 | 1.2410 |
 |Random Forest               | 0.7405 | 1.0038 |
-|Extr. Boosted Random Forest | 0.7180 |1.0212 |
+|Extr. Boosted Random Forest | 0.7160 |1.0212 |
 
 
 
