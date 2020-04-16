@@ -52,7 +52,7 @@ As mentioned before, our effectiveness of decision trees will really come down t
 
 | Without PCA| With PCA|
 |---|---|
-|<a href="url"><img src="https://raw.githubusercontent.com/cfletcher33/MLFinalProject/master/DecisionTreeImportances.png" align="center" height="325" width="325" ></a> | <a href="url"><img src="https://raw.githubusercontent.com/cfletcher33/MLFinalProject/master/PCAFeatureImportancesDTree.png" align="center" height="325" width="325" ></a> |
+|<a href="url"><img src="https://raw.githubusercontent.com/cfletcher33/MLFinalProject/master/DecisionTreeImportances.png" align="center" height="315" width="315" ></a> | <a href="url"><img src="https://raw.githubusercontent.com/cfletcher33/MLFinalProject/master/PCAFeatureImportancesDTree.png" align="center" height="315" width="315" ></a> |
 
 
 
@@ -71,7 +71,9 @@ A random forest has two areas of hyperparameter tuning, the forest, and the tree
 | Min Samples per Split        | 10 | |
 | Number of Estimators         | 10 | |
 
-<a href="url"><img src="https://raw.githubusercontent.com/cfletcher33/MLFinalProject/master/RF_Importances.png" align="center" height="450" width="450" ></a>
+| Without PCA| With PCA|
+|---|---|
+|<a href="url"><img src="https://raw.githubusercontent.com/cfletcher33/MLFinalProject/master/RF_Importances.png" align="center" height="315" width="315" ></a>||
 
 
 ### Extreme Gradient Boosted Random Forest (XGBoost)
@@ -108,22 +110,28 @@ Where lambda is the regularization on the leaf. Interestingly using this Gain is
 A gradient-boosted tree does the above, but with building the tree with respect to the residuals rather than the original data/labels.
 XGBoost is an implementation of gradient boosting that emphasizes execution speed.
 
-<a href="url"><img src="https://raw.githubusercontent.com/cfletcher33/MLFinalProject/master/CrossValXGBoost.png" align="center" height="450" width="450" ></a>
+| Without PCA| With PCA|
+|---|---|
+|<a href="url"><img src="https://raw.githubusercontent.com/cfletcher33/MLFinalProject/master/CrossValXGBoost.png" align="center" height="315" width="315" ></a>| <a href="url"><img src="https://raw.githubusercontent.com/cfletcher33/MLFinalProject/master/PCAXBGCrossVal.png" align="center" height="315" width="315" ></a>|
 
-<a href="url"><img src="https://raw.githubusercontent.com/cfletcher33/MLFinalProject/master/XGBoostFeatureImportances.png" align="center" height="450" width="450" ></a>
+| Without PCA| With PCA|
+|---|---|
+|<a href="url"><img src="https://raw.githubusercontent.com/cfletcher33/MLFinalProject/master/XGBoostFeatureImportances.png" align="center" height="315" width="315" ></a>| <a href="url"><img src="https://raw.githubusercontent.com/cfletcher33/MLFinalProject/master/PCAXGBFeatureImport.png" align="center" height="315" width="315" ></a>|
 
 # Performance Evalaution
 For the Kaggle competition they evaluated performance by calculating the weighted mean absolute error using the weight column mentioned previously. We apply the same method to evaluate our models, and therefore can compare our performance to the competition leaderboard. 
 
-<a href="url"><img src="https://raw.githubusercontent.com/cfletcher33/MLFinalProject/master/ModelErrorComp.png" align="center" height="450" width="450" ></a>
+| Without PCA| With PCA|
+|---|---|
+|<a href="url"><img src="https://raw.githubusercontent.com/cfletcher33/MLFinalProject/master/ModelErrorComp.png" align="center" height="315" width="315" ></a> | <a href="url"><img src="https://raw.githubusercontent.com/cfletcher33/MLFinalProject/master/PCAModelComp.png" align="center" height="315" width="315" ></a>|
 
 
 
-| Model                      | WMAE with PCA| WMAE without PCA|
+| Model                      | WMAE without PCA| WMAE with  PCA|
 |---                         |---           |---              |
-|Decision Tree               | | |
-|Random Forest               | | |
-|Extr. Boosted Random Forest | | |
+|Decision Tree               | 0.9512 | 1.2410 |
+|Random Forest               | 0.7405 | 1.0038 |
+|Extr. Boosted Random Forest | 0.7180 |1.0212 |
 
 
 
